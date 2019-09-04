@@ -1,7 +1,7 @@
 # Drone Lambda Plugin
 
 ### The plugin utilizes AWS go-sdk to update an existing function's code; build your code, zip it with dependencies and upload it to S3. Then trigger the plugin for deploy.
-[![Build Status](https://droneio.spot.im/api/badges/omerxx/drone-lambda-plugin/status.svg)](https://droneio.spot.im/omerxx/drone-lambda-plugin)
+[![Build Status](https://droneio.spot.im/api/badges/CroudTech/drone-lambda-plugin/status.svg)](https://droneio.spot.im/CroudTech/drone-lambda-plugin)
 
 ## Build:
 Build the binary:
@@ -12,7 +12,7 @@ go build main.go
 ## Docker:
 Build the container:
 ```
-docker build --rm=true -t omerxx/drone-lambda-plugin .
+docker build --rm=true -t CroudTech/drone-lambda-plugin .
 ```
 
 ## Usage:
@@ -35,7 +35,7 @@ docker run --rm \
 ```yaml
 steps:
 - name: deploy-lambda
-  image: omerxx/drone-lambda-plugin
+  image: CroudTech/drone-lambda-plugin
   settings:
     pull: true
     function_name: my-function
@@ -67,7 +67,7 @@ steps:
     source: lambda-project-${DRONE_BUILD_NUMBER}.zip
 
 - name: deploy-lambda
-  image: omerxx/drone-lambda-plugin
+  image: CroudTech/drone-lambda-plugin
   settings:
     pull: true
     function_name: my-function
