@@ -16,7 +16,7 @@ func main() {
         region := "eu-west-2"
     }
     svc := lambda.New(session.New(&aws.Config{
-        Region: aws.String(os.Getenv(region)),
+        Region: aws.String(region),
     }))
 
     input := &lambda.UpdateFunctionCodeInput{
