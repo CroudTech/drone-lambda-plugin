@@ -1,16 +1,4 @@
-workspace:
-  base: /go
-  path: src/github.com/CroudTech/drone-lambda-plugin
-
 pipeline:
-  build:
-    image: golang:1.9
-    environment:
-      - CGO_ENABLED=0
-    commands:
-      - go get ./...
-      - go build main.go
-
   docker:
     image: plugins/docker
     repo: croudtech/drone-lambda-plugin
