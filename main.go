@@ -11,12 +11,8 @@ import (
 
 
 func main() {
-    region := os.Getenv("AWS_DEFAULT_REGION")
-    if len(region) == 0 {
-        region := "eu-west-2"
-    }
     svc := lambda.New(session.New(&aws.Config{
-        Region: aws.String(region),
+        Region: aws.String(os.Getenv("AWS_DEFAULT_REGION")),
     }))
 
     input := &lambda.UpdateFunctionCodeInput{
